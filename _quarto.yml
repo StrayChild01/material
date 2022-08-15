@@ -1,0 +1,25 @@
+project:
+  type: book
+
+book:
+  title: "Prueba"
+  author: "Ana Escoto"
+  date: "7/29/2022"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - P1.qmd
+    - P2.qmd
+    - P3.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: journal
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+
