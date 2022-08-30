@@ -1,0 +1,6 @@
+/.quarto/
+.Rproj.user
+.ehpm_2019.dta
+/_site/
+/_book/
+datos/ehpm_2019.dta

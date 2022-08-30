@@ -112,22 +112,6 @@ table(sjlabelled::as_label(ehpm_2019$r104))
 
 ```
 
-## Leer desde archivos de texto y desde una url
-
-Desde el portal <https://datos.gob.mx/> tenemos acceso a directo a varias fuentes de información, al ser datos abiertos, los archivos de texto son muy comunes.
-
-Leeremos parte de esa información, específicamente la de CONAPO <https://datos.gob.mx/busca/dataset/proyecciones-de-la-poblacion-de-mexico-y-de-las-entidades-federativas-2016-2050>
-
-En estas bases hay acentos y otros carecteres especiales del español, por lo que agregaremos una opción de "encoding", de lo contrario da error.
-
-```{r}
-mig_inter_quin_proyecciones <- read.csv("http://www.conapo.gob.mx/work/models/CONAPO/Datos_Abiertos/Proyecciones2018/mig_inter_quin_proyecciones.csv", encoding="latin1")
-#View(mig_inter_quin_proyecciones)
-names(mig_inter_quin_proyecciones)
-```
-
-## Revisando EHPM 2019
-
 ### Ojeando
 
 ```{r}
@@ -221,4 +205,18 @@ Con dplyr, podemos usar "filter" y "select"
 subset4<-ehpm_2019 %>% 
   dplyr::filter(aproba1>4 & r104==1) %>%
     dplyr::select(r104, r106, aproba1)
+```
+
+## Leer desde archivos de texto y desde una url
+
+Desde el portal <https://datos.gob.mx/> tenemos acceso a directo a varias fuentes de información, al ser datos abiertos, los archivos de texto son muy comunes.
+
+Leeremos parte de esa información, específicamente la de CONAPO <https://datos.gob.mx/busca/dataset/proyecciones-de-la-poblacion-de-mexico-y-de-las-entidades-federativas-2016-2050>
+
+En estas bases hay acentos y otros carecteres especiales del español, por lo que agregaremos una opción de "encoding", de lo contrario da error.
+
+```{r}
+mig_inter_quin_proyecciones <- read.csv("http://www.conapo.gob.mx/work/models/CONAPO/Datos_Abiertos/Proyecciones2018/mig_inter_quin_proyecciones.csv", encoding="latin1")
+#View(mig_inter_quin_proyecciones)
+names(mig_inter_quin_proyecciones)
 ```
